@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ product.name }}</h2>
+    <img src="{{ product.image.url }}" width="200">
+    <p>{{ product.description }}</p>
+    <p><strong>£{{ product.price }}</strong></p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Buy Now</button>
+    </form>
+{% endblock %}
